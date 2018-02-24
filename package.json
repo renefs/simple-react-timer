@@ -1,0 +1,72 @@
+{
+  "name": "react-timer-component",
+  "version": "0.1.0",
+  "description": "React component that displays a countdown/countup timer.",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack -p"
+  },
+  "author": "Rene Fernandez",
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "presets": [
+    "react",
+    "es2015",
+    "stage-1"
+  ],
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      "transform-object-rest-spread",
+      "transform-react-jsx",
+      "transform-class-properties"
+    ]
+  },
+  "dependencies": {
+    "css-loader": "^0.28.10",
+    "file-loader": "^1.1.9",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "style-loader": "^0.20.2",
+    "webpack": "^3.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.18.1",
+    "eslint-plugin-class-property": "^1.1.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "standard": "^11.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renefs/react-timer-component.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "timer",
+    "es6",
+    "javascript"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renefs/react-timer-component/issues"
+  },
+  "homepage": "https://github.com/renefs/react-timer-component#readme"
+}
