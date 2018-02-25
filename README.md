@@ -2,7 +2,7 @@
 
 ## Usage
 
-    import Timer from 'react-timer-component'
+    import Timer from 'simple-react-timer'
 
     <Timer/>
 
