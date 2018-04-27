@@ -27,3 +27,20 @@ Result: `240:27` (mmm:ss)
 You can customize the class of the timer. By default, it's `timer`.
 
     <Timer startTime={1519498418325} className={'super-dupper-class'} />
+
+## Development
+
+In one terminal:
+```bash
+npm i
+npm link
+npm start
+```
+
+In another terminal:
+```bash
+cd example
+npm i
+npm link simple-react-timer
+npm start
+```
