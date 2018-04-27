@@ -1,6 +1,6 @@
 {
   "name": "simple-react-timer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React component that displays a countdown/countup timer.",
   "main": "build/index.js",
   "scripts": {
