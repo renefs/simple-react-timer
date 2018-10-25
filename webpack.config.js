@@ -1,5 +1,8 @@
-var path = require('path');
-module.exports = {
+var path = require('path')
+var webpack = require('webpack')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
+var config = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -9,30 +12,41 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.js$/,
-        include: path.resolve(__dirname, 'src'),
-        exclude: /(node_modules|bower_components|build)/,
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {},
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: ['@babel/plugin-proposal-class-properties']
+          }
         }
       },
       {
         test: /.css$/,
-        use: [ 'style-loader', 'css-loader' ]
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /.(png|jpg|gif|eot|svg|ttf|woff|woff2)$/,
         use: [
           {
             loader: 'file-loader',
-            options: {}  
+            options: {}
           }
         ]
-      },
+      }
     ]
-  },
-  externals: {
-    'react': 'commonjs react' // this line is just to use the React dependency of our parent-testing-project instead of using our own React.
   }
-};
+}
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+      }
+    })
+  )
+}
+
+module.exports = config
